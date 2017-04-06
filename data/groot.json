@@ -1,0 +1,12 @@
+{
+  "groot": {
+    "de": ["Ich bin Groot", "Wir sind Groot"],
+    "en": ["I am Groot", "We are Groot"],
+    "it": ["Io sono Groot", "Noi siamo Groot"],
+    "fr": ["Je suis Groot", "Nous sommes Groot"],
+    "ro": ["Eu sunt Groot", "Noi suntem Groot"],
+    "es": ["Yo soy Groot"],
+    "pt": ["Eu sou Groot"],
+    "ch": ["Wo shi Groot"]
+  }
+}

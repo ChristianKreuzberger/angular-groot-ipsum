@@ -1,0 +1,26 @@
+body {
+    background-color: black;
+    color: aliceblue;
+}
+
+textarea {
+    color: black;
+}
+
+h3 {
+    color: chocolate;
+}
+
+.navbar-fixed-bottom > div > div {
+    color: aquamarine;
+    margin-top: 5px;
+}
+
+.form-control {
+    border-radius: 0 !important;
+}
+
+
+.form-group > label {
+    margin-top: 7px;
+}

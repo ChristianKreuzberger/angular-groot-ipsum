@@ -1,0 +1,28 @@
+{
+  "name": "angular-groot-ipsum",
+  "version": "1.0.0",
+  "description": "This repo contains a very basic text generator that is only capable of writing \"I am Groot\" in various languages.",
+  "main": "index.js",
+  "dependencies": {
+    "angular-resource": "^1.5.8",
+    "angular-animate": "^1.5.11",
+    "angularjs-toaster": "^1.2.1",
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.7",
+    "ng-file-upload": "^12.2.13"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChristianKreuzberger/angular-groot-ipsum.git"
+  },
+  "author": "",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/ChristianKreuzberger/angular-groot-ipsum/issues"
+  },
+  "homepage": "https://github.com/ChristianKreuzberger/angular-groot-ipsum#readme"
+}
