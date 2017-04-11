@@ -7,7 +7,6 @@ Demo: [https://christiankreuzberger.github.io/angular-groot-ipsum/](https://chri
 If you want to submit more languages or texts, please have a look at [data/groot.json]() and submit a pull request.
 
 ## Copyright
-Groot is copyright by ...
+The name "Groot" as well as the saying "I am Groot" is (c) Marvel Studios and/or Walt Disney Studios Motion Pictures.<br />
 
-This repo is under the WTFPL License. 
-
+This repo is under the WTFPL License, which means: Do what the f?$! you want.
