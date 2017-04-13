@@ -25,8 +25,8 @@ groot.factory('GrootService',
  * I am Groot. I am Groot. I am Groot!
  */
 groot.controller('GrootController', [
-    "$scope", "GrootService", "toaster", "$uibModal",
-    function($scope, GrootService, toaster, $uibModal) {
+    "$scope", "GrootService", "toaster", "$uibModal", "$interval",
+    function($scope, GrootService, toaster, $uibModal, $interval) {
     var vm = this;
 
     /**
@@ -52,6 +52,18 @@ groot.controller('GrootController', [
      * @type {number}
      */
     vm.numSentences = 25;
+	
+	/**
+     * I am Groot
+     * @type {string}
+     */
+    $scope.grootState = "groot-l";
+	
+	/**
+     * I am Groot
+     * @type {object}
+     */
+    $scope.grootInterval;
 
     /**
      * I am Grooooooooooot
@@ -77,6 +89,7 @@ groot.controller('GrootController', [
                     $uibModal.open({
                         animation: true,
                         templateUrl: 'youtube.html',
+						size: 'lg'
                     });
 
                     return;
@@ -141,6 +154,27 @@ groot.controller('GrootController', [
     vm.onGroot = function() {
         vm.groot = generateGroot();
     };
+	
+	/**
+     * I am Groot - I am Groot
+     */
+	$scope.onGrootImg = function() {
+		
+		if ($scope.grootInterval !== undefined) {
+			$interval.cancel($scope.grootInterval);
+			$scope.grootInterval = undefined;
+		}else{
+			$scope.grootInterval = $interval(function () {
+				if ($scope.grootState === "groot-l")
+					$scope.grootState = "groot-r";
+				else
+					$scope.grootState = "groot-l";
+			}, 500);
+		}
+		
+			
+		
+	};
 
 
 }]);
