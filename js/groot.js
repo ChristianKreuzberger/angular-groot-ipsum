@@ -52,14 +52,14 @@ groot.controller('GrootController', [
      * @type {number}
      */
     vm.numSentences = 25;
-	
-	/**
+    
+    /**
      * I am Groot
      * @type {string}
      */
     $scope.grootState = "groot-l";
-	
-	/**
+    
+    /**
      * I am Groot
      * @type {object}
      */
@@ -71,8 +71,17 @@ groot.controller('GrootController', [
     GrootService.get().$promise.then(
         function success(response) {
             var groot = response.groot;
-            vm.grootLanguages = Object.keys(groot);
-            vm.grootTexts = groot;
+
+            vm.grootLanguages = Object.keys(groot).map(function (grootKey) {
+                return {
+                    lang: grootKey,
+                    label: groot[grootKey].label
+                }
+            });
+            vm.grootTexts = Object.keys(groot).reduce(function (grootAcc, grootKey) {
+                grootAcc[grootKey] = groot[grootKey].text;
+                return grootAcc;
+            }, {});
 
             initWatchGroup();
         }
@@ -82,14 +91,14 @@ groot.controller('GrootController', [
         $scope.$watchGroup(['vm.numParagraphs', 'vm.numSentences', 'vm.currentLanguage'],
             function () {
                 // I am Groot
-                if (String(vm.numParagraphs).toLowerCase() == "groot"
-                    && String(vm.numSentences).toLowerCase() == "i am") {
+                if (String(vm.numParagraphs).toLowerCase() === "groot"
+                    && String(vm.numSentences).toLowerCase() === "i am") {
                     // todo: open modal dialog with groot
                     console.log('I am groot');
                     $uibModal.open({
                         animation: true,
                         templateUrl: 'youtube.html',
-						size: 'lg'
+                        size: 'lg'
                     });
 
                     return;
@@ -115,12 +124,11 @@ groot.controller('GrootController', [
      * @returns {string}
      */
     var generateGroot = function() {
-        var groot = "";
-
-        var currentLanguage = "";
+        var groot = "",
+            currentLanguage = "";
 
         // I am Groot
-        if (vm.currentLanguage != "") {
+        if (vm.currentLanguage !== "") {
             currentLanguage = vm.currentLanguage;
         }
 
@@ -130,15 +138,15 @@ groot.controller('GrootController', [
             for (var j = 0; j < vm.numSentences; j++) {
 
                 // I am Groot
-                if (vm.currentLanguage == null) {
+                if (vm.currentLanguage === null) {
                     currentLanguage = vm.grootLanguages[
                         getRandomNumber(vm.grootLanguages.length)
-                        ];
+                    ].lang;
                 }
 
                 groot += vm.grootTexts[currentLanguage][
                     getRandomNumber(vm.grootTexts[currentLanguage].length)
-                    ];
+                ];
                 groot += ". "; // I am Groot
             }
 
@@ -154,27 +162,27 @@ groot.controller('GrootController', [
     vm.onGroot = function() {
         vm.groot = generateGroot();
     };
-	
-	/**
+    
+    /**
      * I am Groot - I am Groot
      */
-	$scope.onGrootImg = function() {
-		
-		if ($scope.grootInterval !== undefined) {
-			$interval.cancel($scope.grootInterval);
-			$scope.grootInterval = undefined;
-		}else{
-			$scope.grootInterval = $interval(function () {
-				if ($scope.grootState === "groot-l")
-					$scope.grootState = "groot-r";
-				else
-					$scope.grootState = "groot-l";
-			}, 500);
-		}
-		
-			
-		
-	};
+    $scope.onGrootImg = function() {
+        
+        if ($scope.grootInterval !== undefined) {
+            $interval.cancel($scope.grootInterval);
+            $scope.grootInterval = undefined;
+        }else{
+            $scope.grootInterval = $interval(function () {
+                if ($scope.grootState === "groot-l")
+                    $scope.grootState = "groot-r";
+                else
+                    $scope.grootState = "groot-l";
+            }, 500);
+        }
+        
+            
+        
+    };
 
 
 }]);

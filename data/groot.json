@@ -1,12 +1,57 @@
 {
   "groot": {
-    "de": ["Ich bin Groot", "Wir sind Groot"],
-    "en": ["I am Groot", "We are Groot"],
-    "it": ["Io sono Groot", "Noi siamo Groot"],
-    "fr": ["Je suis Groot", "Nous sommes Groot"],
-    "ro": ["Eu sunt Groot", "Noi suntem Groot"],
-    "es": ["Yo soy Groot"],
-    "pt": ["Eu sou Groot"],
-    "ch": ["Wo shi Groot"]
+    "en": {
+      "label": "English",
+      "text": [
+        "I am Groot",
+        "We are Groot"
+      ]
+    },
+    "de": {
+      "label": "German",
+      "text": [
+        "Ich bin Groot",
+        "Wir sind Groot"
+      ]
+    },
+    "it": {
+      "label": "Italian",
+      "text": [
+        "Io sono Groot",
+        "Noi siamo Groot"
+      ]
+    },
+    "fr": {
+      "label": "French",
+      "text": [
+        "Je suis Groot",
+        "Nous sommes Groot"
+      ]
+    },
+    "ro": {
+      "label": "Romanian",
+      "text": [
+        "Eu sunt Groot",
+        "Noi suntem Groot"
+      ]
+    },
+    "es": {
+      "label": "Spanish",
+      "text": [
+        "Yo soy Groot"
+      ]
+    },
+    "pt": {
+      "label": "Portuguese",
+      "text": [
+        "Eu sou Groot"
+      ]
+    },
+    "ch": {
+      "label": "Chinese",
+      "text": [
+        "Wo shi Groot"
+      ]
+    }
   }
 }
