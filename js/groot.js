@@ -7,6 +7,7 @@ var groot = angular.module('groot', [
     'ui.bootstrap',
     'ngResource',
     'ngAnimate',
+    'angular-clipboard',
     'toaster'
 ]);
 
@@ -25,8 +26,8 @@ groot.factory('GrootService',
  * I am Groot. I am Groot. I am Groot!
  */
 groot.controller('GrootController', [
-    "$scope", "GrootService", "toaster", "$uibModal", "$interval",
-    function($scope, GrootService, toaster, $uibModal, $interval) {
+    "$scope", "GrootService", "toaster", "$uibModal", "$interval", "clipboard",
+    function($scope, GrootService, toaster, $uibModal, $interval, clipboard) {
     var vm = this;
 
     /**
@@ -108,7 +109,7 @@ groot.controller('GrootController', [
                 if (!parseInt(vm.numParagraphs) || !parseInt(vm.numSentences) || vm.numParagraphs < 0 || vm.numSentences < 0) {
                     toaster.pop('error', "I am Groot!!!");
                 } else {
-                    vm.onGroot();
+                    vm.groot = generateGroot();
                 }
             });
     };
@@ -160,9 +161,17 @@ groot.controller('GrootController', [
      * I am Groot - I am Groot
      */
     vm.onGroot = function() {
-        vm.groot = generateGroot();
+        if (!clipboard.supported) {
+            toaster.pop('error', "I am Groot!!!");
+            return;
+        }
+
+        clipboard.copyText(vm.groot);
+
+        toaster.pop('success', "We are Groot.");
     };
-    
+
+
     /**
      * I am Groot - I am Groot
      */
