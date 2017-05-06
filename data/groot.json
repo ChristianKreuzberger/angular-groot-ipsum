@@ -52,6 +52,37 @@
       "text": [
         "Wo shi Groot"
       ]
+    },
+    "kl": {
+      "label": "Klingon",
+      "text": [
+        "jIH ghaH Groot",
+	"maH ghaH Groot"
+      ]
+    },
+    "hu": {
+      "label": "Hungarian",
+      "text": [
+        "En voyok Groot"
+      ]
+    },
+    "pl": {
+      "label": "Polish",
+      "text": [
+        "Jest em Groot"
+      ]
+    },
+    "tr": {
+      "label": "Turkish",
+      "text": [
+        "Adim Groot"
+      ]
+    },
+    "cz": {
+      "label": "Czech",
+      "text": [
+        "Já jsem Groot"
+      ]
     }
   }
 }
