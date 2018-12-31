@@ -4,13 +4,13 @@
   "description": "This repo contains a very basic text generator that is only capable of writing \"I am Groot\" in various languages.",
   "main": "index.js",
   "dependencies": {
-    "angular": "~1.5.8",
-    "angular-animate": "~1.5.11",
+    "angular": "~1.7.0",
+    "angular-animate": "~1.7.0",
     "angular-clipboard": "^1.5.0",
-    "angular-resource": "~1.5.8",
+    "angular-resource": "~1.7.0",
     "angular-ui-bootstrap": "^2.5.0",
     "angularjs-toaster": "^1.2.1",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.4.0",
     "font-awesome": "^4.7.0"
   },
   "devDependencies": {},
